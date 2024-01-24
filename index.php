@@ -16,7 +16,30 @@
 
 <?php
 
-$lenghtPassword = $_GET['number'];
+$number = $_GET['number'];
+
+function lenghtPassword( $password){
+
+    $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+
+    
+    $caratteriMisti = str_shuffle($caratteri);
+
+   
+    $parolaCasuale = substr($caratteriMisti, 0, $password);
+
+
+    if($password < 8){
+        return "<h1> La password deve essere minore di 8 caratteri";
+    }
+
+    return $parolaCasuale;
+
+
+}
+
+
+echo "<h1> la tua passqord generata è: " .lenghtPassword($number) ."</h1>";
 
 
 
