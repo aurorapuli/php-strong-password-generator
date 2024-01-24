@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <?php
+
+       require_once __DIR__ . "/partials/functions.php";
+       
+       
+
+    ?>
 </head>
 <body>
     
@@ -18,25 +26,7 @@
 
 $number = $_GET['number'];
 
-function lenghtPassword( $password){
-
-    $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
-
-    
-    $caratteriMisti = str_shuffle($caratteri);
-
-   
-    $parolaCasuale = substr($caratteriMisti, 0, $password);
-
-
-    if($password < 8){
-        return "<h1> La password deve essere minore di 8 caratteri";
-    }
-
-    return $parolaCasuale;
-
-
-}
+lenghtPassword($number);
 
 
 echo "<h1> la tua passqord generata è: " .lenghtPassword($number) ."</h1>";
